@@ -1,0 +1,10 @@
+[project]
+name = "unifi-device-blocker"
+version = "0.1.0"
+description = "A simple python script that blocks outbound access to devices on your Unifi network"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pyunifi>=2.21",
+    "unifi-client>=0.0.1.2",
+]
