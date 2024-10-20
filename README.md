@@ -7,7 +7,7 @@ This script allows you to manage internet access for specific devices on your Un
 - Python 3.6 or newer
 - Install the required dependencies using pip:
   ```bash
-  pip install pyunifi
+  pip install pyunifi python-dotenv
   ```
 - Ensure you have appropriate access to the Unifi Controller (e.g., username and password with sufficient privileges).
 
@@ -22,16 +22,16 @@ To run the application, you can use the `uv` command. Here is a concrete example
 
 2. Run the script using `uv`:
    ```bash
-   uv python unifi_device_blocker.py <device_name> <action>
+   uv run python unifi_device_blocker.py <device_name> <action>
    ```
 
    For example, to block a device named "laptop-123":
    ```bash
-   uv python unifi_device_blocker.py laptop-123 block
+   uv run python unifi_device_blocker.py laptop-123 block
    ```
    To unblock the same device:
    ```bash
-   uv python unifi_device_blocker.py laptop-123 unblock
+   uv run python unifi_device_blocker.py laptop-123 unblock
    ```
 
 ## Input Arguments
@@ -61,6 +61,7 @@ export UNIFI_USERNAME='your_username'
 export UNIFI_PASSWORD='your_password'
 export UNIFI_PORT='8443'  # Optional
 export UNIFI_VERSION='UDMP-unifiOS'  # Optional
+export UNIFI_VERIFY_SSL = false # Optional
 ```
 
 ## Error Handling
@@ -77,14 +78,14 @@ The script includes error handling for the following scenarios:
 
 To block a device named "smartphone-456":
 ```bash
-uv python unifi_device_blocker.py smartphone-456 block
+uv run python unifi_device_blocker.py smartphone-456 block
 ```
 
 ### Unblocking a Device
 
 To unblock the same device:
 ```bash
-uv python unifi_device_blocker.py smartphone-456 unblock
+uv run python unifi_device_blocker.py smartphone-456 unblock
 ```
 
 ## Notes
